@@ -3,7 +3,7 @@ import { Route, Link } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
 import CharacterCard from "./CharacterCard.js";
-// import SearchForm from "./SearchForm.js";
+import SearchForm from "./SearchForm.js";
 import WelcomePage from "./WelcomePage";
 
 const Cards = styled.div`
@@ -12,11 +12,6 @@ const Cards = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
   text-align: center;
-`;
-
-const SearchBar = styled.div`
-  display: flex;
-  justify-content: center;
 `;
 
 export default function CharacterList() {
@@ -48,14 +43,8 @@ export default function CharacterList() {
   return (
     <div>
       <section className="character-list">
-        <SearchBar>
-          <input
-            type="text"
-            placeholder="Search"
-            value={searchTerm}
-            onChange={handleChange}
-          />
-        </SearchBar>
+        <SearchForm value={searchTerm} onChange={handleChange} />
+
         <Cards>
           {searchResults.map(char => {
             return (
