@@ -1,10 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-export default function SearchForm() {
- 
-  return (
-    <section className="search-form">
-     // Add a search form here
-    </section>
-  );
+export default function SearchForm(props) {
+  return;
 }
