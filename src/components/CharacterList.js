@@ -24,6 +24,7 @@ export default function CharacterList() {
     axios.get(`https://rickandmortyapi.com/api/character/`).then(response => {
       console.log(response);
       setCharacter(response.data.results);
+      setSearchResults(response.data.results);
     });
   }, []);
 
@@ -33,6 +34,7 @@ export default function CharacterList() {
   const handleChange = event => {
     setSearchTerm(event.target.value);
   };
+
   useEffect(() => {
     const results = character.filter(person =>
       person.name.toLowerCase().includes(searchTerm.toLowerCase())
